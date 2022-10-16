@@ -1,5 +1,3 @@
-#script.js
-
 $(document).ready(function () {
     // listen for save button clicks
     $('.saveBtn').on('click', function () {
@@ -31,7 +29,15 @@ $(document).ready(function () {
     var interval = setInterval(hourUpdater, 15000);
 
     // load any saved data from localStorage
-    $('#hour-9 .description').val(localStorage.getItem('hour-9'));
+    $('#9AM .description').val(localStorage.getItem('9AM'));
+    $('#10AM .description').val(localStorage.getItem('10AM'));
+    $('#11AM .description').val(localStorage.getItem('11AM'));
+    $('#12PM .description').val(localStorage.getItem('12PM'));
+    $('#13PM .description').val(localStorage.getItem('13PM'));
+    $('#14PM .description').val(localStorage.getItem('14PM'));
+    $('#15PM .description').val(localStorage.getItem('15PM'));
+    $('#16PM .description').val(localStorage.getItem('16PM'));
+    $('#17PM .description').val(localStorage.getItem('17PM'));
     ///need to repeat line 21 for all the other hours
 
 
