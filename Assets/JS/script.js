@@ -1,10 +1,20 @@
 $(document).ready(function () {
+
+
+ // display current day on page
+const moment = require("../Library/moment_locales");
+
+console.log(moment.toString());
+
+        // $("#currentDay").text(moment().format('LLLL'));
+
+
     // listen for save button clicks
     $('.saveBtn').on('click', function () {
         // get nearby values
 
         // save in localStorage
-
+        localStorage.setTime(time, text);
         // Show notification that item was saved to localStorage by adding class 'show'
 
         // Timeout to remove 'show' class after 5 seconds
@@ -15,12 +25,13 @@ $(document).ready(function () {
 
     function hourUpdater() {
         // get current number of hours (preferably with moment.js)
-
+        var currentTime = moment().hour();
         // loop over time blocks
         // loop over time blocks ---> https://api.jquery.com/each/
         // inside this loop, // check if we've moved past this time. If we have, make the row grey. If it's future, make it green. if it's past, make it red. Using the past, present, and future classes in css file
 
         // check if we've moved past this time
+
     }
 
     hourUpdater();
@@ -38,8 +49,8 @@ $(document).ready(function () {
     $('#15PM .description').val(localStorage.getItem('15PM'));
     $('#16PM .description').val(localStorage.getItem('16PM'));
     $('#17PM .description').val(localStorage.getItem('17PM'));
-    ///need to repeat line 21 for all the other hours
+   
 
 
-    // display current day on page
+   
 });
