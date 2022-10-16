@@ -4,17 +4,23 @@ $(document).ready(function () {
 
  // display current day on page
 
-    var currentTime = moment().format('LLLL');
-    $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
-console.log(currentTime);
+    // var Today = moment().format('LLLL');
+    $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
+    // console.log(Today);
 
 
     // listen for save button clicks
     $('.saveBtn').on('click', function () {
-        // get nearby values
+
+        // get nearby values in JQuery
+        var text = $(this).siblings(".description").val();
+        var time = $(this).parent().attr("id");
+        console.log(this)
 
         // save in localStorage
-        localStorage.setTime(time, text);
+        localStorage.setItem(time, text);
+
+
         // Show notification that item was saved to localStorage by adding class 'show'
 
         // Timeout to remove 'show' class after 5 seconds
@@ -23,17 +29,20 @@ console.log(currentTime);
         }, 5000);
     });
 
-    function hourUpdater() {
+function hourUpdater() {
         // get current number of hours (preferably with moment.js)
-        // var currentTime = moment().hour();
+        var currentTime = moment().hour(); // finding which hour of the day we are currently in
+
         // console.log(currentTime)
         // loop over time blocks
         // loop over time blocks ---> https://api.jquery.com/each/
         // inside this loop, // check if we've moved past this time. If we have, make the row grey. If it's future, make it green. if it's past, make it red. Using the past, present, and future classes in css file
-
         // check if we've moved past this time
 
-    }
+        $(".time-block").each(function () {
+            var timeBlock = parseInt($(this).attr("id").split("hour")[1]);
+            console.log(timeBlock, currentTime)
+        });
 
     hourUpdater();
 
@@ -51,7 +60,4 @@ console.log(currentTime);
     $('#16PM .description').val(localStorage.getItem('16PM'));
     $('#17PM .description').val(localStorage.getItem('17PM'));
    
-
-
-   
-});
+};
