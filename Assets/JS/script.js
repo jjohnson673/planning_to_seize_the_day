@@ -1,12 +1,12 @@
+
 $(document).ready(function () {
 
 
  // display current day on page
-const moment = require("../Library/moment_locales");
 
-console.log(moment.toString());
-
-        // $("#currentDay").text(moment().format('LLLL'));
+    var currentTime = moment().format('LLLL');
+    $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
+console.log(currentTime);
 
 
     // listen for save button clicks
@@ -25,7 +25,8 @@ console.log(moment.toString());
 
     function hourUpdater() {
         // get current number of hours (preferably with moment.js)
-        var currentTime = moment().hour();
+        // var currentTime = moment().hour();
+        // console.log(currentTime)
         // loop over time blocks
         // loop over time blocks ---> https://api.jquery.com/each/
         // inside this loop, // check if we've moved past this time. If we have, make the row grey. If it's future, make it green. if it's past, make it red. Using the past, present, and future classes in css file
