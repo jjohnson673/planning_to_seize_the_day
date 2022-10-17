@@ -4,8 +4,9 @@
  // display current day on page
 // $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm a"));
 
-var currentDay = moment().format("dddd, MMM Do YYYY");
+var currentDay = moment().format("dddd, MMM Do YYYY, h:mma");
 var currentTime = moment().hour();
+setInterval(currentDay, 1000);
 $("#currentDay").html(currentDay);
 
 
@@ -26,9 +27,9 @@ $(document).ready(function() {
                // Show notification that item was saved to localStorage by adding class "show"
        
                // Timeout to remove "show" class after 5 seconds
-            //    setTimeout(function () {
-            //        $(".notification").removeClass("show");
-            //    }, 5000);
+               setTimeout(function () {
+                   $(".notification").removeClass("show");
+               }, 5000);
            })
        
     //    function hourUpdater() {
@@ -78,7 +79,4 @@ $(document).ready(function() {
            $("#hour16 .description").val(localStorage.getItem("hour16"));
            $("#hour17 .description").val(localStorage.getItem("hour17"));
           
- 
-       
-
 });
