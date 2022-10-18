@@ -2,7 +2,6 @@
 
 
  // display current day on page
-// $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm a"));
 
 var currentDay = moment().format("dddd, MMM Do YYYY, h:mma");
 var currentTime = moment().hour();
@@ -22,22 +21,11 @@ $(document).ready(function() {
                  
                // save in localStorage
                localStorage.setItem(time, text);
-      
-       
-               // Show notification that item was saved to localStorage by adding class "show"
-       
-               // Timeout to remove "show" class after 5 seconds
-               setTimeout(function () {
-                   $(".notification").removeClass("show");
-               }, 5000);
            })
        
-    //    function hourUpdater() {
-               // get current number of hours (preferably with moment.js)
-            //    var currentTime = moment().hour();
        
                // loop over time blocks ---> https://api.jquery.com/each/
-               // inside this loop, // check if we"ve moved past this time. If we have, make the row grey. If it"s future, make it green. if it"s past, make it red. Using the past, present, and future classes in css file
+               // inside this loop, // check if we've moved past this time. If we have, make the row grey. If it"s future, make it green. if it"s past, make it red. Using the past, present, and future classes in css file
 
 
                $(".time-block").each(function () {
@@ -63,10 +51,6 @@ $(document).ready(function() {
 
                    
        
-        //    hourUpdater();
-       
-        //    // set up interval to check if current time needs to be updated
-        //    var interval = setInterval(hourUpdater, 15000);
        
            // load any saved data from localStorage
            $("#hour9 .description").val(localStorage.getItem("hour9"));
